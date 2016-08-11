@@ -2,6 +2,20 @@ var rminimist = require('rminimist')
 var split = require('shell-quote').parse
 var join = require('shell-quote').quote
 
+/**
+ * OPTIONS:
+ * Options for `rminimist`.
+ *
+ *     > OPTIONS.boolean
+ *     [ 'ignore-assertions', 'cleared', 'pending', ... ]
+ *
+ *     > OPTIONS.string
+ *     [ 'file', 'begin', 'end', ... ]
+ *
+ *     > OPTIONS.alias
+ *     { f: 'file', b: 'begin', e: 'end', ... }
+ */
+
 var OPTIONS = {
   boolean: [
     'ignore-assertions',
@@ -69,14 +83,13 @@ var OPTIONS = {
     'N': 'no-total',
     'V': 'value',
   },
-
   'array': [
     'alias'
   ]
 }
 
-/*
- * Options that should be scrubbed in safe environments
+/**
+ * Internal: Options that should be scrubbed in safe environments
  */
 
 var UNSAFE_OPTIONS = [
@@ -85,8 +98,8 @@ var UNSAFE_OPTIONS = [
   'file'
 ]
 
-/*
- * Aliases for certain commands.
+/**
+ * Internal: Aliases for certain commands.
  * eg, `ledger bal` is the same as `ledger balance`
  */
 
@@ -169,7 +182,7 @@ function normalizeCommand (cmd) {
  * toString : toString(flags)
  * Converts Ledger Flags back into string.
  *
- *     > args = parse('bal -f ledger.journal -M')
+ *     > args = parse('bal -f ledger.journal -M');
  *     > toString(args)
  *     'balance --file ledger.journal --monthly'
  */
@@ -198,7 +211,7 @@ function toString (flags) {
  * parseMany : parseMany(strings...)
  * Parses many arguments.
  *
- *     > args = parseMany('-f ledger.journal', 'bal -M')
+ *     > args = parseMany('-f ledger.journal', 'bal -M');
  *     > toString(args)
  *     'balance --file ledger.journal --monthly'
  */
@@ -247,7 +260,7 @@ function pushValue (args, flag, val) {
 }
 
 /*
- * Exports
+ * Internal: Exports
  */
 
 module.exports = {

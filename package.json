@@ -1,7 +1,7 @@
 {
   "name": "hledger-flags",
   "version": "1.0.0",
-  "description": "",
+  "description": "Parses hledger flags",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
@@ -12,11 +12,20 @@
   "author": "Rico Sta. Cruz <rico@ricostacruz.com>",
   "license": "MIT",
   "devDependencies": {
+    "mdx": "0.3.1",
     "tape": "4.6.0"
   },
   "dependencies": {
     "minimist": "1.2.0",
     "rminimist": "1.0.1",
     "shell-quote": "1.6.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rstacruz/hledger-flags.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rstacruz/hledger-flags/issues"
+  },
+  "homepage": "https://github.com/rstacruz/hledger-flags#readme"
 }
