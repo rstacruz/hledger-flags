@@ -14,6 +14,8 @@
 
 Parses flags for [hledger][]. Knows most of hledger's flag aliases and other quirks.
 
+[![Status](https://travis-ci.org/rstacruz/hledger-flags.svg?branch=master)](https://travis-ci.org/rstacruz/hledger-flags "See test builds")
+
 [hledger]: http://hledger.org/
 
 ## API
